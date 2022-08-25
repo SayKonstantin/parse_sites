@@ -1,12 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
-import requests
 
 
+# браузер открывает страницу и сохраняет ее содержимое в файл
 def get(url, filename='index.html'):
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     try:
@@ -22,6 +21,7 @@ def get(url, filename='index.html'):
         driver.quit()
 
 
+# парсим страницу с новостями Озон
 def parse_ozon(filename: str):
     with open(filename) as file:
         src = file.read()
@@ -41,6 +41,7 @@ def parse_ozon(filename: str):
         text_of_new = parse_ozon_page(filename)
 
 
+# парсим страницу с конкретной новостью Озон
 def parse_ozon_page(filename):
     with open(filename) as file:
         src = file.read()
@@ -49,6 +50,7 @@ def parse_ozon_page(filename):
     return new.text
 
 
+# парсим страницу с новостями Яндекс
 def parse_yandex(filename):
     with open(filename) as file:
         src = file.read()
@@ -61,6 +63,7 @@ def parse_yandex(filename):
         parse_yandex_page(filename)
 
 
+# парсим страницу с конкретной новостью Яндекс
 def parse_yandex_page(filename):
     with open(filename) as file:
         src = file.read()
@@ -72,10 +75,10 @@ def parse_yandex_page(filename):
 
 
 def main():
-    site1 = 'https://seller.ozon.ru/news/'
-    site2 = 'https://market.yandex.ru/partners/news'
-    get(site1, filename='ozon.html')
-    get(site2, filename='yandex.html')
+    site_ozon = 'https://seller.ozon.ru/news/'
+    site_yandex = 'https://market.yandex.ru/partners/news'
+    get(site_ozon, filename='ozon.html')
+    get(site_yandex, filename='yandex.html')
     parse_ozon('ozon.html')
     parse_yandex('yandex.html')
 
