@@ -1,0 +1,169 @@
+<html><head>
+    <title>FBO: меняем домашние склады и обновляем матрицу кластеров</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta data-n-head="ssr" data-hid="description" name="description" content="Продавайте свои товары на маркетплейсе Ozon"><link data-n-head="ssr" rel="icon" type="image/png" href="https://cdn1.ozone.ru/s3/seller-promo-events/ui/favicon/16x16.png" sizes="16x16"><link data-n-head="ssr" rel="icon" type="image/png" href="https://cdn1.ozone.ru/s3/seller-promo-events/ui/favicon/32x32.png" sizes="32x32"><link data-n-head="ssr" rel="icon" type="image/png" href="https://cdn1.ozone.ru/s3/seller-promo-events/ui/favicon/48x48.png" sizes="48x48"><script data-n-head="ssr" data-hid="gtm-script">if(!window._gtm_init){window._gtm_init=1;(function(w,n,d,m,e,p){w[d]=(w[d]==1||n[d]=='yes'||n[d]==1||n[m]==1||(w[e]&&w[e][p]&&w[e][p]()))?1:0})(window,navigator,'doNotTrack','msDoNotTrack','external','msTrackingProtectionEnabled');(function(w,d,s,l,x,y){w[x]={};w._gtm_inject=function(i){if(w.doNotTrack||w[x][i])return;w[x][i]=1;w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);}})(window,document,'script','dataLayer','_gtm_ids','_gtm_inject')}</script><script data-n-head="ssr" src="https://vk.com/js/api/openapi.js?169" async=""></script><link rel="preload" href="/_nuxt/b161fc2.js" as="script"><link rel="preload" href="/_nuxt/8f3855e.js" as="script"><link rel="preload" href="/_nuxt/css/dae4eeb.css" as="style"><link rel="preload" href="/_nuxt/43f9af5.js" as="script"><link rel="preload" href="/_nuxt/css/95d763a.css" as="style"><link rel="preload" href="/_nuxt/753c2ff.js" as="script"><link rel="preload" href="/_nuxt/css/627971d.css" as="style"><link rel="preload" href="/_nuxt/9f05d9a.js" as="script"><link rel="stylesheet" href="/_nuxt/css/dae4eeb.css"><link rel="stylesheet" href="/_nuxt/css/95d763a.css"><link rel="stylesheet" href="/_nuxt/css/627971d.css">
+  <script async="" src="/cdn-cgi/bm/cv/669835187/api.js"></script><script charset="utf-8" src="/_nuxt/991305c.js"></script><style type="text/css">.resize-observer[data-v-8859cc6c]{position:absolute;top:0;left:0;z-index:-1;width:100%;height:100%;border:none;background-color:transparent;pointer-events:none;display:block;overflow:hidden;opacity:0}.resize-observer[data-v-8859cc6c] object{display:block;position:absolute;top:0;left:0;height:100%;width:100%;overflow:hidden;pointer-events:none;z-index:-1}</style><script charset="utf-8" src="/_nuxt/1503cba.js"></script><link rel="preload" as="style" href="/_nuxt/css/e4b6150.css"><script charset="utf-8" src="/_nuxt/a83bc7d.js"></script><link rel="preload" as="style" href="/_nuxt/css/dee20d1.css"><script charset="utf-8" src="/_nuxt/dcc57e7.js"></script><link rel="preload" as="style" href="/_nuxt/css/f4a6170.css"><script charset="utf-8" src="/_nuxt/56652f7.js"></script><script charset="utf-8" src="/_nuxt/1b641ec.js"></script><link rel="preload" as="style" href="/_nuxt/css/fe56264.css"><script charset="utf-8" src="/_nuxt/58779f0.js"></script><script charset="utf-8" src="/_nuxt/3f280c6.js"></script><link rel="preload" as="style" href="/_nuxt/css/dc106cc.css"><script charset="utf-8" src="/_nuxt/71ffa49.js"></script><style id="vuescroll-silde-mode-style" type="text/css">
+    @-webkit-keyframes loading-rotate {
+      to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+      }
+    }
+
+    @keyframes loading-rotate {
+      to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+      }
+    }
+
+    @-webkit-keyframes loading-wipe {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -40px;
+      }
+      to {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -120px;
+      }
+    }
+
+    @keyframes loading-wipe {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -40px;
+      }
+      to {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -120px;
+      }
+    }
+
+    .__vuescroll .__refresh,
+    .__vuescroll .__load {
+      position: absolute;
+      width: 100%;
+      color: black;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .__vuescroll .__refresh svg,
+    .__vuescroll .__load svg {
+      margin-right: 10px;
+      width: 25px;
+      height: 25px;
+      vertical-align: sub;
+    }
+    .__vuescroll .__refresh svg.active,
+    .__vuescroll .__load svg.active {
+      transition: all 0.2s;
+    }
+    .__vuescroll .__refresh svg.active.deactive,
+    .__vuescroll .__load svg.active.deactive {
+      transform: rotateZ(180deg);
+    }
+    .__vuescroll .__refresh svg path,
+    .__vuescroll .__refresh svg rect,
+    .__vuescroll .__load svg path,
+    .__vuescroll .__load svg rect {
+      fill: #20a0ff;
+    }
+    .__vuescroll .__refresh svg.start,
+    .__vuescroll .__load svg.start {
+      stroke: #343640;
+      stroke-width: 4;
+      stroke-linecap: round;
+      -webkit-animation: loading-rotate 2s linear infinite;
+      animation: loading-rotate 2s linear infinite;
+    }
+    .__vuescroll .__refresh svg.start .bg-path,
+    .__vuescroll .__load svg.start .bg-path {
+      stroke: #f2f2f2;
+      fill: none;
+    }
+    .__vuescroll .__refresh svg.start .active-path,
+    .__vuescroll .__load svg.start .active-path {
+      stroke: #20a0ff;
+      fill: none;
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: 0;
+      -webkit-animation: loading-wipe 1.5s ease-in-out infinite;
+      animation: loading-wipe 1.5s ease-in-out infinite;
+    }
+  </style></head>
+  <body>
+    <noscript data-n-head="ssr" data-hid="gtm-noscript" data-pbody="true"></noscript><div id="__nuxt"><!----><div id="__layout"><div class="default-layout"><header class="header header--black" data-v-48a901e4=""><div class="header__container container_Yo34J" data-v-48a901e4=""><div class="header__main_wrap" data-v-48a901e4=""><a href="/" aria-current="page" class="logo header__logo active" data-v-c06ff3f4="" data-v-48a901e4=""><img src="https://cdn1.ozone.ru/s3/seller-promo-events/ui/images/logo/logo.svg" alt="Логотип Ozon" data-v-c06ff3f4=""></a> <div class="header__select-lang" data-v-48a901e4=""><!----></div></div> <!----> <button class="header__button header__button--menu" data-v-48a901e4=""><span data-v-48a901e4=""></span> <span data-v-48a901e4=""></span> <span data-v-48a901e4=""></span></button> <div class="header__lang" data-v-48a901e4=""><div class="header__button--lang-wrap" data-v-48a901e4=""><button class="header__button header__button--lang header__button--lang-close active" data-v-48a901e4=""><span data-v-48a901e4=""></span> <span data-v-48a901e4=""></span> <span data-v-48a901e4=""></span></button></div> <!----></div> <div class="header__menu" data-v-48a901e4=""><div class="header__links" data-v-48a901e4=""><a href="/news/" aria-current="page" class="customLink header__link active" data-v-48a901e4=""><div class="header__span header__label" data-v-48a901e4="">
+              Новости
+            </div></a><div class="dropdown header__link" data-v-131b2bd0="" data-v-48a901e4=""><div class="header__span header__label" data-v-131b2bd0="" data-v-48a901e4="">
+              Обучение
+            </div> <span class="more" data-v-131b2bd0=""></span> <div class="v-portal" style="display:none;" data-v-131b2bd0=""></div></div><div class="customLink header__link" data-v-48a901e4=""><div class="header__span header__label" data-v-48a901e4="">
+              Комиссии
+            </div></div><a href="/what_to_sell/" class="customLink header__link" data-v-48a901e4=""><div class="header__span header__label" data-v-48a901e4="">
+              Аналитика
+            </div></a><a href="/partners/" class="customLink header__link" data-v-48a901e4=""><div class="header__span header__label" data-v-48a901e4="">
+              Партнёры
+            </div></a></div> <a href="/app/signin" class="header__button header__button--login button_Tynp0 button--height-small_z-sd+ button--color-black_gwhyR button--font-size-small_tQ5bo button--round_90mcZ button--background-gray_XwSf0" data-v-48a901e4="">
+        Войти
+      </a></div></div></header> <div><div class="new" data-v-53c81802=""><div data-v-53c81802="" class="container_Yo34J"><section data-v-53c81802="" class="new-top"><!----> <h1 data-v-53c81802="" class="new-top__title title_Oebvj title_Oebvj title--h1-smaller_RUef6">
+        FBO: меняем домашние склады и обновляем матрицу кластеров
+      </h1> <div data-v-05d76b94="" data-v-53c81802="" class="page-info new-top__page-info"><div data-v-05d76b94="" class="page-info__top"><div data-v-05d76b94="" class="page-info__date page-info__date--dark">
+      
+    </div> <!----> <!----></div> <div data-v-05d76b94="" class="page-info__topic"><div data-v-05d76b94="" class="page-info__topic-title">
+      Тема:
+    </div> <div data-v-05d76b94="" class="page-info__topic-value">
+      #FBO
+    </div></div></div></section> <section data-v-53c81802="" class="new-section html-content_Ol8P9"><h2>Меняем домашние склады для трёх кластеров</h2>
+<p>Чтобы точнее рассчитывать логистику и быстрее доставлять товары, с 1 сентября изменим приоритетные фулфилменты для продаж в кластеры: </p>
+<ul>
+<li>Уфа — домашним складом станет Самара вместо Екатеринбурга;</li>
+<li>Сыктывкар — домашним складом станет Пушкино вместо Санкт-Петербурга; </li>
+<li>Мурманск — домашним складом станет Санкт-Петербург вместо Твери.</li>
+</ul>
+<p>Это обновление помогает нам с вами в подготовке к высокому сезону и сокращает простои фур из-за дорожных работ или пробок на загруженных трассах. </p>
+<p>На стоимости перевозок обновление почти никак не отразится: в старых домашних регионах коэффициент для расчёта логистики немного вырастет, зато в новых станет единицей. </p>
+<p><a href="https://seller-edu.ozon.ru/docs/commissions-tariffs/commissions-tariffs-ozon/rashody-na-dostavku.html" rel="noopener noreferrer" target="_blank">Матрица кластеров и домашних складов</a></p>
+<h2>Изменим названия кластеров в Санкт-Петербурге</h2>
+<p>Видим, что разговорные названия кластеров путают некоторых продавцов, поэтому с 19 августа меняем локальные обозначения на более понятные. 
+Какие будут названия у кластеров: </p>
+<ul>
+<li>Приморский → Санкт-Петербург Север; </li>
+<li>Красносельский → Санкт-Петербург Юг;</li>
+<li>Всеволожск → Ленинградская область.</li>
+</ul></section> <!----></div></div></div> <footer class="footer" data-v-525e4fac=""><div class="footer__container container_Yo34J" data-v-525e4fac=""><div class="footer__row" data-v-525e4fac=""><div class="footer__col" data-v-525e4fac=""><h3 class="footer__col-title" data-v-525e4fac="">Полезные ссылки</h3> <ul class="footer__list" data-v-525e4fac=""><li class="footer__item" data-v-525e4fac=""><a href="/news/" aria-current="page" class="footer__link active" data-v-525e4fac="">
+              Новости
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="/events/" class="footer__link" data-v-525e4fac="">
+              Мероприятия
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="/articles/" class="footer__link" data-v-525e4fac="">
+              Статьи
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="/faq/" class="footer__link" data-v-525e4fac="">
+              FAQ
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="/selleruniversity/" class="footer__link" data-v-525e4fac="">
+              Университет Ozon
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="/partners/" class="footer__link" data-v-525e4fac="">
+              Партнеры Ozon
+            </a></li></ul></div><div class="footer__col" data-v-525e4fac=""><h3 class="footer__col-title" data-v-525e4fac="">Ответы под рукой</h3> <ul class="footer__list" data-v-525e4fac=""><li class="footer__item" data-v-525e4fac=""><a href="/what_to_sell/" class="footer__link" data-v-525e4fac="">
+              Что продавать на Ozon
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="https://seller-edu.ozon.ru/?utm_source=ozonsellerfooter" target="_blank" class="footer__link" data-v-525e4fac="">
+              База знаний
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="https://seller-edu.ozon.ru/docs/fbo/adresa-skladov-fbo.html" target="_blank" class="footer__link" data-v-525e4fac="">
+              Адреса складов Ozon
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="https://seller-edu.ozon.ru/docs/reference-info/packaging-requirements-fbo.html" target="_blank" class="footer__link" data-v-525e4fac="">
+              Правила упаковки FBO
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="https://seller-edu.ozon.ru/docs/fbs/ozon-logistika/trebovaniya-k-upakovke.html" target="_blank" class="footer__link" data-v-525e4fac="">
+              Правила упаковки FBS
+            </a></li></ul></div><div class="footer__col" data-v-525e4fac=""><h3 class="footer__col-title" data-v-525e4fac="">Ещё есть</h3> <ul class="footer__list" data-v-525e4fac=""><li class="footer__item" data-v-525e4fac=""><a href="https://docs.ozon.ru/api/seller" target="_blank" class="footer__link" data-v-525e4fac="">
+              Ozon Seller API
+            </a></li><li class="footer__item" data-v-525e4fac=""><a href="https://www.ozon.ru/special/crossborder/" target="_blank" class="footer__link" data-v-525e4fac="">
+              Продажи из-за рубежа
+            </a></li></ul></div> <div class="footer__col" data-v-525e4fac=""><h3 class="footer__col-title" data-v-525e4fac="">Мы в соцсетях</h3> <ul class="social" data-v-525e4fac=""><li class="social__item" data-v-525e4fac=""><a href="https://t.me/ozonmarketplace" target="_blank" class="social__link social__link--telegram" data-v-525e4fac=""></a></li> <li class="social__item" data-v-525e4fac=""><a href="https://vk.com/ozon_business" target="_blank" class="social__link social__link--vk" data-v-525e4fac=""></a></li></ul> <h3 class="footer__col-title" data-v-525e4fac="">Приложение Ozon Seller</h3> <ul class="footer__app-stores" data-v-525e4fac=""><li class="footer__app-stores__item" data-v-525e4fac=""><a href="https://play.google.com/store/apps/details?id=ru.ozon.seller_app&amp;referrer=utm_source%3Dhttps%253A%252F%252Fseller.ozon.ru%252F%26utm_medium%3DLink%26utm_campaign%3Ddownload%26anid%3Dadmob" target="_blank" data-v-525e4fac=""><img src="https://cdn1.ozone.ru/graphics/action/seller/footer/app-google.png" alt="Google Play" data-v-525e4fac=""></a></li><li class="footer__app-stores__item" data-v-525e4fac=""><a href="https://apps.apple.com/ru/app/ozon-seller/id1501167158?utm_source=ozonseller&amp;utm_medium=link&amp;utm_campaign=download_appstore" target="_blank" data-v-525e4fac=""><img src="https://cdn1.ozone.ru/graphics/action/seller/footer/app-apple.png" alt="App Store" data-v-525e4fac=""></a></li></ul></div></div></div></footer> <div class="vue-portal-target"></div></div></div></div><script>window.__NUXT__=(function(a,b,c,d,e,f,g){return {layout:"default",data:[{data:{id:395,date:"2022-08-18T16:30:00.000Z",title:"FBO: меняем домашние склады и обновляем матрицу кластеров",readTime:a,highlight:b,content:"## Меняем домашние склады для трёх кластеров\nЧтобы точнее рассчитывать логистику и быстрее доставлять товары, с 1 сентября изменим приоритетные фулфилменты для продаж в кластеры: \n- Уфа — домашним складом станет Самара вместо Екатеринбурга;\n- Сыктывкар — домашним складом станет Пушкино вместо Санкт-Петербурга; \n- Мурманск — домашним складом станет Санкт-Петербург вместо Твери.\n\nЭто обновление помогает нам с вами в подготовке к высокому сезону и сокращает простои фур из-за дорожных работ или пробок на загруженных трассах. \n\nНа стоимости перевозок обновление почти никак не отразится: в старых домашних регионах коэффициент для расчёта логистики немного вырастет, зато в новых станет единицей. \n\n[Матрица кластеров и домашних складов](https:\u002F\u002Fseller-edu.ozon.ru\u002Fdocs\u002Fcommissions-tariffs\u002Fcommissions-tariffs-ozon\u002Frashody-na-dostavku.html)\n\n## Изменим названия кластеров в Санкт-Петербурге\nВидим, что разговорные названия кластеров путают некоторых продавцов, поэтому с 19 августа меняем локальные обозначения на более понятные. \nКакие будут названия у кластеров: \n- Приморский → Санкт-Петербург Север; \n- Красносельский → Санкт-Петербург Юг;\n- Всеволожск → Ленинградская область.\n",htmlContent:"\u003Ch2\u003EМеняем домашние склады для трёх кластеров\u003C\u002Fh2\u003E\n\u003Cp\u003EЧтобы точнее рассчитывать логистику и быстрее доставлять товары, с 1 сентября изменим приоритетные фулфилменты для продаж в кластеры: \u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003EУфа — домашним складом станет Самара вместо Екатеринбурга;\u003C\u002Fli\u003E\n\u003Cli\u003EСыктывкар — домашним складом станет Пушкино вместо Санкт-Петербурга; \u003C\u002Fli\u003E\n\u003Cli\u003EМурманск — домашним складом станет Санкт-Петербург вместо Твери.\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Cp\u003EЭто обновление помогает нам с вами в подготовке к высокому сезону и сокращает простои фур из-за дорожных работ или пробок на загруженных трассах. \u003C\u002Fp\u003E\n\u003Cp\u003EНа стоимости перевозок обновление почти никак не отразится: в старых домашних регионах коэффициент для расчёта логистики немного вырастет, зато в новых станет единицей. \u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fseller-edu.ozon.ru\u002Fdocs\u002Fcommissions-tariffs\u002Fcommissions-tariffs-ozon\u002Frashody-na-dostavku.html\" rel=\"noopener noreferrer\" target=\"_blank\"\u003EМатрица кластеров и домашних складов\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003Ch2\u003EИзменим названия кластеров в Санкт-Петербурге\u003C\u002Fh2\u003E\n\u003Cp\u003EВидим, что разговорные названия кластеров путают некоторых продавцов, поэтому с 19 августа меняем локальные обозначения на более понятные. \nКакие будут названия у кластеров: \u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003EПриморский → Санкт-Петербург Север; \u003C\u002Fli\u003E\n\u003Cli\u003EКрасносельский → Санкт-Петербург Юг;\u003C\u002Fli\u003E\n\u003Cli\u003EВсеволожск → Ленинградская область.\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E",slug:"fbo-menyaem-domashnie-sklady-i-obnovlyaem-matricu-klasterov",published_at:"2022-08-18T17:10:32.084Z",files:[],theme:[{id:4,name:"FBO",color:"#CBDEFF"}]}}],fetch:{},error:a,state:{abTest:{redesignMainPage:b},articles:{list:[],total:c,page:d,pageSize:f,filters:a,loading:b,error:a},catalogs:{themes:[],"event-themes":[],towns:[],"product-categories":[]},constants:{constants:{env:"production",mode:"prod"}},events:{list:[],total:c,page:d,pageSize:e,filters:a,loading:b,error:a},header:{menuItems:[{label:"Новости",link:"\u002Fnews\u002F",dropdownItems:[],order:d},{label:"Обучение",dropdownItems:[{id:10,label:"Университет Ozon",link:"\u002Fselleruniversity\u002F"},{id:e,label:"База знаний",link:"https:\u002F\u002Fseller-edu.ozon.ru\u002F?utm_source=ozonsellerheader "},{id:g,label:"Мероприятия",link:"\u002Fevents\u002F"}],order:2},{label:"Комиссии",link:"https:\u002F\u002Fcalculator.ozon.ru\u002F",dropdownItems:[],order:3},{label:"Аналитика",link:"\u002Fwhat_to_sell\u002F",dropdownItems:[],order:5},{label:"Партнёры",link:"\u002Fpartners\u002F",dropdownItems:[],order:f}],isMobile:b},news:{list:[],highlightNews:[],total:c,page:d,pageSize:g,filters:a,loading:b,error:a},partners:{partners:[],partnersCount:c,page:d,pageSize:12,loading:b,filtersQuery:a},services:{services:a},stories:{list:[],total:c,page:d,pageSize:e,filters:a,loading:b,error:a},user:{isLoggedIn:b},whatToSell:{brands:{isLoading:b,brandTree:[],brands:{},filters:{activeCategoryValue:c},total:c},bestsellers:{isLoading:b,bestsellersTree:[],bestsellers:{},recommended:{},filters:{activeService:"bestsellers",activeCategoryValue:c}},search:{isLoading:b,searchTree:[],search:{},searchZr:{},filters:{activeService:"search",activeCategoryValue:c}}}},serverRendered:true,routePath:"\u002Fnews\u002Ffbo-menyaem-domashnie-sklady-i-obnovlyaem-matricu-klasterov\u002F",config:{config:{dev:b},_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:a}}}}(null,false,0,1,9,6,8));</script><script src="/_nuxt/b161fc2.js" defer=""></script><script src="/_nuxt/9f05d9a.js" defer=""></script><script src="/_nuxt/8f3855e.js" defer=""></script><script src="/_nuxt/43f9af5.js" defer=""></script><script src="/_nuxt/753c2ff.js" defer=""></script>
+  <script>(function(){window['__CF$cv$params']={r:'740c505d7c7b9d5e',m:'EIN_Mnxr9RZPXUT4hl.wH1ScT8pbQOxXFKO3W4XuzRg-1661514249-0-AbU+S1sbBHvIdjIxJBajTj2NuzYDJww8IX2rMQtG5o0AT4YIqIzZL/t3D66ffrt88LWj9fIA8YCvYzhgZmrQy5TY8qcLfw/maNhatPJuAUFalJzZFaOft19kflDo5FWRaEPKS+r66QjdE56xQ6q8ipLhgyv98xvtvXnfR6JC93JHPjV4J3avBTRylluytRADtdQUeddEWilugO550ExaRmk=',s:[0x7622efbc95,0x1117474436],}})();</script>
+
+<link href="/_nuxt/css/627971d.css" rel="stylesheet" type="text/css"><link href="/_nuxt/css/f4a6170.css" rel="stylesheet" type="text/css"><link href="/_nuxt/css/dee20d1.css" rel="stylesheet" type="text/css"><link href="/_nuxt/css/e4b6150.css" rel="stylesheet" type="text/css"><link href="/_nuxt/css/fe56264.css" rel="stylesheet" type="text/css"><link href="/_nuxt/css/dc106cc.css" rel="stylesheet" type="text/css"></body></html>
