@@ -19,4 +19,6 @@
 chromedriver
 ozon.html
 yandex.html
-.env.dist
+.env
+.idea
+

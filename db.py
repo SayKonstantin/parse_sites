@@ -3,7 +3,6 @@ import pymysql
 import config
 from config import HOST, PORT, USER, PASSWORD, DATABASE
 
-
 def connect_to_db():
     try:
         connection = pymysql.connect(
@@ -14,12 +13,10 @@ def connect_to_db():
             database=DATABASE,
             cursorclass=pymysql.cursors.DictCursor
         )
-        print("successfully connected...")
-        print("#" * 20)
+        print("successfully connected")
+        print("_" * 22)
 
         try:
-            print('2 try')
-
             cursor = connection.cursor()
             with connection.cursor() as cursor:
                 create_table_query = "CREATE TABLE `news`(id int AUTO_INCREMENT," \

@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
-
+from db import connect_to_db
 
 # браузер открывает страницу и сохраняет ее содержимое в файл
 def get(url, filename='index.html'):
@@ -77,6 +77,7 @@ def parse_yandex_page(filename):
 def main():
     site_ozon = 'https://seller.ozon.ru/news/'
     site_yandex = 'https://market.yandex.ru/partners/news'
+    connect_to_db()
     get(site_ozon, filename='ozon.html')
     get(site_yandex, filename='yandex.html')
     parse_ozon('ozon.html')
