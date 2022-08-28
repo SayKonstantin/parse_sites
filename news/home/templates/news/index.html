@@ -1,0 +1,12 @@
+<title>NEWS</title>
+{% for new in news %}
+<div>
+    <h3> {{ new.title }} </h3>
+    {% if new.tags %}
+        <p> {{ new.tags }} </p>
+    {% endif %}
+
+    <p> {{ new.content }} </p>
+</div>
+
+{% endfor %}
